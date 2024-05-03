@@ -18,7 +18,7 @@ let fillRect = (x, y, width, height, color) => {
 let drawCircle = (x, y, radius, color) => {
   ctx.beginPath();
   ctx.strokeStyle = color;
-  ctx.lineWidth = 10;
+  ctx.lineWidth = 5;
   ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
   ctx.stroke();
 };
@@ -30,7 +30,7 @@ let fillCircle = (x, y, radius, color) => {
   ctx.fill();
 };
 
-let speed = 10000;
+let speed = 7500;
 
 let gameLoop = () => {
   setInterval(drawAndUpdate, 1000 / speed);
