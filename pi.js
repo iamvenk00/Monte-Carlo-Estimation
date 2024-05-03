@@ -37,8 +37,8 @@ let gameLoop = () => {
 };
 
 let dotColor = "green";
-let shapeColor = "white";
-let backgroundColor = "black";
+let shapeColor = "black";
+let backgroundColor = "white";
 
 let allDots = [];
 let dotRadius = 2;
