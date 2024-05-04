@@ -18,7 +18,7 @@ let fillRect = (x, y, width, height, color) => {
 let drawCircle = (x, y, radius, color) => {
   ctx.beginPath();
   ctx.strokeStyle = color;
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 1;
   ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
   ctx.stroke();
 };
@@ -30,19 +30,19 @@ let fillCircle = (x, y, radius, color) => {
   ctx.fill();
 };
 
-let speed = 7500;
+let speed = 1000;
 
 let gameLoop = () => {
   setInterval(drawAndUpdate, 1000 / speed);
 };
 
 let dotColor = "green";
-let shapeColor = "black";
-let backgroundColor = "white";
+let shapeColor = "white";
+let backgroundColor = "black";
 
 let allDots = [];
-let dotRadius = 2;
-let circleRadius = canvas.width / 4;
+let dotRadius = 1;
+let circleRadius = canvas.width / 2;
 
 let dotCountInCircle = 0;
 
@@ -50,13 +50,13 @@ let createNewDot = () => {
   let x = Math.random() * canvas.width;
   let y = Math.random() * canvas.height;
   allDots.push({ x: x, y: y });
-  let xDistanceToCenter = Math.abs(canvas.width / 4 - x);
-  let yDistanceToCenter = Math.abs(canvas.height / 4 - y);
+  let xDistanceToCenter = Math.abs(canvas.width / 2 - x);
+  let yDistanceToCenter = Math.abs(canvas.height / 2 - y);
   let distance = Math.sqrt(
     xDistanceToCenter * xDistanceToCenter +
       yDistanceToCenter * yDistanceToCenter
   );
-  if (distance < canvas.width / 4) {
+  if (distance < canvas.width / 2) {
     dotCountInCircle++;
   }
   fillCircle(x, y, dotRadius, dotColor);
@@ -73,7 +73,7 @@ let makeEstimationToPI = () => {
 let drawAndUpdate = () => {
   createNewDot();
   makeEstimationToPI();
-  drawCircle(canvas.width / 4, canvas.height / 4, circleRadius, shapeColor);
+  drawCircle(canvas.width / 2, canvas.height / 2, circleRadius, shapeColor);
   drawRect(0, 0, canvas.width, canvas.height, shapeColor);
 };
 
