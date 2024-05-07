@@ -66,8 +66,7 @@ let makeEstimationToPI = () => {
   let pi = (dotCountInCircle * 4) / allDots.length;
   dotCountEl.innerText = "Dot count: " + allDots.length;
   piEl.innerText = "Estimated PI: " + pi;
-  differenceEl.innerText =
-    "Difference: " + Math.abs(Math.PI - pi);
+  differenceEl.innerText = "Difference: " + Math.abs(Math.PI - pi);
 };
 
 let drawAndUpdate = () => {
