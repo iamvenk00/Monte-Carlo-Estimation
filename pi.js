@@ -67,7 +67,7 @@ let makeEstimationToPI = () => {
   dotCountEl.innerText = "Dot count: " + allDots.length;
   piEl.innerText = "Estimated PI: " + pi;
   differenceEl.innerText =
-    "Difference between real PI: " + Math.abs(Math.PI - pi);
+    "Difference between estimate and real: " + Math.abs(Math.PI - pi);
 };
 
 let drawAndUpdate = () => {
